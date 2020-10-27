@@ -189,7 +189,7 @@ const createFetchData = (
       technicalMessage: err.toString(),
     });
   }
-    // setEntries(mockResponse.sort(sortEntry).reverse());
+  // setEntries(mockResponse.sort(sortEntry).reverse());
   await forceWait(); // Show progressbar a bit longer
   setIsLoading(false);
 };

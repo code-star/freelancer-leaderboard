@@ -2,9 +2,13 @@ import React, { FC } from "react";
 import { Typography, Link, Grid } from "@material-ui/core";
 import codestarLogo from "./codestar.svg";
 import ordinaLogo from "./ordina.svg";
-
-/* TODO logos and links to Ordina and Codestar sites and social media */
 // https://github.com/edent/SuperTinyIcons/
+import githubIcon from "./github.svg";
+import linkedinIcon from "./linkedin.svg";
+import mediumIcon from "./medium.svg";
+import meetupIcon from "./meetup.svg";
+import youtubeIcon from "./youtube.svg";
+
 const ShareBanner: FC = () => {
   return (
     <div style={{ margin: "1rem" }}>
@@ -44,15 +48,34 @@ const ShareBanner: FC = () => {
           </Link>
         </Grid>
       </Grid>
-      <Grid container spacing={4} justify="center">
+      {/* TODO fix order, links and alt texts */}
+      <Grid container spacing={1} justify="center">
         <Grid item xs={1}>
-          <img alt="Ahead of change" src={ordinaLogo} />
+          <Link href="https://www.ordina.nl/vakgebieden/scala/">
+            <img alt="Codestar Github" src={githubIcon} />
+          </Link>
         </Grid>
         <Grid item xs={1}>
-          <img alt="Ahead of change" src={ordinaLogo} />
+          <Link href="https://www.ordina.nl/vakgebieden/scala/">
+            <img alt="x" src={linkedinIcon} />
+          </Link>
+        </Grid>
+        <Grid item xs={1}>
+          <Link href="https://www.ordina.nl/vakgebieden/scala/">
+            <img alt="x" src={mediumIcon} />
+          </Link>
+        </Grid>
+        <Grid item xs={1}>
+          <Link href="https://www.ordina.nl/vakgebieden/scala/">
+            <img alt="x" src={meetupIcon} />
+          </Link>
+        </Grid>
+        <Grid item xs={1}>
+          <Link href="https://www.ordina.nl/vakgebieden/scala/">
+            <img alt="x" src={youtubeIcon} />
+          </Link>
         </Grid>
       </Grid>
-      <Typography>OrdinaCodestar Github Youtube Meetup Linkedin</Typography>
     </div>
   );
 };
