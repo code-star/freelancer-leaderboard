@@ -38,11 +38,24 @@ const formatDate = (input: string) => {
   return formatted;
 };
 
+const getMedal = (index: number): string => {
+  if(index === 1) {
+    return "🥇"
+  }
+  if(index === 2) {
+    return "🥈"
+  }
+  if(index === 3) {
+    return "🥉"
+  }
+  return "";
+}
+
 const EntryListItem: FC<Props> = ({ index, entry: { name, date, score } }) => (
   <ListItem>
     <Grid container wrap="nowrap">
-      <Grid item xs={1}>
-        {index}
+      <Grid item xs={2}>
+        {index}{getMedal(index)}
       </Grid>
       <Grid item xs zeroMinWidth>
         <Tooltip title={name}>

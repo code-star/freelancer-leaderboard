@@ -35,7 +35,7 @@ export const staticMockResponse: Entry[] = [
     seed: 4,
   },
   {
-    name: "Marjolaine_OKeefe334290824",
+    name: "Marjolaine_OKeefe33429082420948590285098240985205820945842",
     score: 90000,
     date: "2020-10-07T17:04:44.936Z",
     seed: 4,

@@ -40,7 +40,7 @@ const createFetchData = (
   }
 
   // For debugging
-  setEntries(staticMockResponse.sort(sortEntry).reverse());
+  // setEntries(staticMockResponse.sort(sortEntry).reverse());
   // setEntries(generateMockEntries(100).sort(sortEntry).reverse());
 
   // Request is too fast, show progressbar a bit longer so the visitor knows the scores will be updated
