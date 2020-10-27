@@ -6,6 +6,9 @@ export interface Entry {
   date: string;
   seed: number;
 }
+type LeaderboardError =
+  | { errorMessage: string; technicalMessage?: string }
+  | undefined;
 
 const REFRESH_MS = 30 * 1000;
 
@@ -159,14 +162,15 @@ const mockResponse: Entry[] = [
 const sortEntry = (entry: Entry, otherEntry: Entry): number =>
   entry.score - otherEntry.score;
 
-const forceWait = () => new Promise((resolve) => {
-  setTimeout(resolve, 1000)
-})
+const forceWait = () =>
+  new Promise((resolve) => {
+    setTimeout(resolve, 1000);
+  });
 
 const createFetchData = (
-  setEntries: any,
-  setIsLoading: any,
-  setError: any
+  setEntries: (entries: Entry[]) => void,
+  setIsLoading: (_: boolean) => void,
+  setError: (_: LeaderboardError) => void
 ) => async () => {
   setIsLoading(true);
   try {
@@ -185,7 +189,7 @@ const createFetchData = (
       technicalMessage: err.toString(),
     });
   }
-  //   setEntries(mockResponse.sort(sortEntry).reverse());
+    // setEntries(mockResponse.sort(sortEntry).reverse());
   await forceWait(); // Show progressbar a bit longer
   setIsLoading(false);
 };
@@ -194,9 +198,7 @@ const createFetchData = (
 const useLeaderboard = () => {
   const [entries, setEntries] = useState<Entry[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [error, setError] = useState<
-    { errorMessage: string; technicalMessage?: string } | undefined
-  >();
+  const [error, setError] = useState<LeaderboardError>();
 
   useEffect(() => {
     const fetchData = createFetchData(setEntries, setIsLoading, setError);

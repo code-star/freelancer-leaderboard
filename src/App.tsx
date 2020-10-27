@@ -14,7 +14,7 @@ import useLeaderboard from "./useLeaderboard";
 import theme from "./theme";
 import EntryListItem from "./components/EntryListItem";
 import EntryListHeader from "./components/EntryListHeader";
-import ShareBanner from "./components/ShareBanner";
+import ShareBanner from "./components/ShareBanner/ShareBanner";
 
 const App: FC = () => {
   const { entries, isLoading, error } = useLeaderboard();
