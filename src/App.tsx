@@ -4,18 +4,14 @@ import "./App.css";
 import { orange } from "@material-ui/core/colors";
 import {
   Container,
-  Button,
   createMuiTheme,
   ThemeProvider,
-  CardHeader,
-  Card,
-  CardContent,
   List,
   ListItem,
-  Paper,
   Grid,
 } from "@material-ui/core";
 import ErrorCard from "./components/ErrorCard";
+import BoardCard from "./components/BoardCard";
 
 const darkTheme = createMuiTheme({
   palette: {
@@ -33,7 +29,9 @@ interface Entry {
 
 const App: FC = () => {
   const [entries, setEntries] = useState<Entry[]>([]);
-  const [errorMessage, setErrorMessage] = useState<string>("");
+  const [error, setError] = useState<
+    { errorMessage: string; technicalMessage?: string } | undefined
+  >();
 
   useEffect(() => {
     async function fetchData() {
@@ -48,10 +46,10 @@ const App: FC = () => {
         if (response.length > 0) {
           setEntries(response);
         } else {
-          setErrorMessage("Could not update leaderboard");
+          setError({ errorMessage: "Could not update leaderboard" });
         }
       } catch (err) {
-        setErrorMessage("Could not update leaderboard" + err.toString());
+        setError({ errorMessage: "Could not update leaderboard", technicalMessage: err.toString() });
       }
     }
     fetchData();
@@ -81,16 +79,13 @@ const App: FC = () => {
           style={{ height: "100%" }}
         >
           <Grid item>
-            <Card>
-              <CardHeader title="Freelancer Leaderboard" />
-              <CardContent>
-                <List>{entryListItems}</List>
-              </CardContent>
-            </Card>
+            <BoardCard>
+              <List>{entryListItems}</List>
+            </BoardCard>
           </Grid>
-          {errorMessage && (
+          {error && (
             <Grid item>
-              <ErrorCard errorMessage={errorMessage} />
+              <ErrorCard errorMessage={error.errorMessage} technicalMessage={error.technicalMessage} />
             </Grid>
           )}
         </Grid>
