@@ -6,7 +6,7 @@ import {
   List,
   Grid,
   Typography,
-  Link,
+  Link, LinearProgress
 } from "@material-ui/core";
 import ErrorCard from "./components/ErrorCard";
 import BoardCard from "./components/BoardCard";
@@ -17,7 +17,7 @@ import EntryListHeader from "./components/EntryListHeader";
 import ShareBanner from "./components/ShareBanner";
 
 const App: FC = () => {
-  const { entries, error } = useLeaderboard();
+  const { entries, isLoading, error } = useLeaderboard();
 
   const entryListItems = entries.map((entry, index) => (
     <EntryListItem key={entry.name} index={index + 1} entry={entry} />
@@ -48,6 +48,7 @@ const App: FC = () => {
                 <Link href="./Freelancer.pdf">More info in this PDF</Link>.
               </Typography>
               <ShareBanner />
+              {isLoading ? <LinearProgress title="Loading new high scores..." /> : <div style={{ height: "4px"}} />}
               <List>
                 <EntryListHeader />
                 {entryListItems}

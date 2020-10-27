@@ -7,6 +7,8 @@ export interface Entry {
   seed: number;
 }
 
+const REFRESH_MS = 30 * 1000;
+
 const mockResponse: Entry[] = [
   {
     name: "Foo",
@@ -20,132 +22,132 @@ const mockResponse: Entry[] = [
     date: "2020-10-17T17:04:44.936Z",
     seed: 4,
   },
-    {
-      name: "Baz",
-      score: 10000,
-      date: "2020-10-17T17:04:44.936Z",
-      seed: 4,
-    },
-    {
-      name: "Bat",
-      score: 10000,
-      date: "2020-10-17T17:04:44.936Z",
-      seed: 4,
-    },
-    {
-      name: "Foo",
-      score: 10000,
-      date: "2020-10-17T17:04:44.936Z",
-      seed: 4,
-    },
-    {
-      name: "Bar",
-      score: 10000,
-      date: "2020-10-17T17:04:44.936Z",
-      seed: 4,
-    },
-    {
-      name: "Baz",
-      score: 10000,
-      date: "2020-10-17T17:04:44.936Z",
-      seed: 4,
-    },
-    {
-      name: "Bat",
-      score: 10000,
-      date: "2020-10-17T17:04:44.936Z",
-      seed: 4,
-    },
-    {
-      name: "Foo",
-      score: 10000,
-      date: "2020-10-17T17:04:44.936Z",
-      seed: 4,
-    },
-    {
-      name: "Bar",
-      score: 10000,
-      date: "2020-10-17T17:04:44.936Z",
-      seed: 4,
-    },
-    {
-      name: "Baz",
-      score: 10000,
-      date: "2020-10-17T17:04:44.936Z",
-      seed: 4,
-    },
-    {
-      name: "Bat",
-      score: 10000,
-      date: "2020-10-17T17:04:44.936Z",
-      seed: 4,
-    },
-    {
-      name: "Foo",
-      score: 10000,
-      date: "2020-10-17T17:04:44.936Z",
-      seed: 4,
-    },
-    {
-      name: "Bar",
-      score: 10000,
-      date: "2020-10-17T17:04:44.936Z",
-      seed: 4,
-    },
-    {
-      name: "Baz",
-      score: 10000,
-      date: "2020-10-17T17:04:44.936Z",
-      seed: 4,
-    },
-    {
-      name: "Bat",
-      score: 10000,
-      date: "2020-10-17T17:04:44.936Z",
-      seed: 4,
-    },
-    {
-      name: "Foo",
-      score: 10000,
-      date: "2020-10-17T17:04:44.936Z",
-      seed: 4,
-    },
-    {
-      name: "Bar",
-      score: 10000,
-      date: "2020-10-17T17:04:44.936Z",
-      seed: 4,
-    },
-    {
-      name: "Baz",
-      score: 10000,
-      date: "2020-10-17T17:04:44.936Z",
-      seed: 4,
-    },
-    {
-      name: "Bat",
-      score: 10000,
-      date: "2020-10-17T17:04:44.936Z",
-      seed: 4,
-    },
-    {
-      name: "Foo",
-      score: 10000,
-      date: "2020-10-17T17:04:44.936Z",
-      seed: 4,
-    },
-    {
-      name: "Bar",
-      score: 10000,
-      date: "2020-10-17T17:04:44.936Z",
-      seed: 4,
-    },
-    {
-      name: "Baz",
-      score: 10000,
-      date: "2020-10-17T17:04:44.936Z",
-      seed: 4,
-    },
+  {
+    name: "Baz",
+    score: 10000,
+    date: "2020-10-17T17:04:44.936Z",
+    seed: 4,
+  },
+  {
+    name: "Bat",
+    score: 10000,
+    date: "2020-10-17T17:04:44.936Z",
+    seed: 4,
+  },
+  {
+    name: "Foo",
+    score: 10000,
+    date: "2020-10-17T17:04:44.936Z",
+    seed: 4,
+  },
+  {
+    name: "Bar",
+    score: 10000,
+    date: "2020-10-17T17:04:44.936Z",
+    seed: 4,
+  },
+  {
+    name: "Baz",
+    score: 10000,
+    date: "2020-10-17T17:04:44.936Z",
+    seed: 4,
+  },
+  {
+    name: "Bat",
+    score: 10000,
+    date: "2020-10-17T17:04:44.936Z",
+    seed: 4,
+  },
+  {
+    name: "Foo",
+    score: 10000,
+    date: "2020-10-17T17:04:44.936Z",
+    seed: 4,
+  },
+  {
+    name: "Bar",
+    score: 10000,
+    date: "2020-10-17T17:04:44.936Z",
+    seed: 4,
+  },
+  {
+    name: "Baz",
+    score: 10000,
+    date: "2020-10-17T17:04:44.936Z",
+    seed: 4,
+  },
+  {
+    name: "Bat",
+    score: 10000,
+    date: "2020-10-17T17:04:44.936Z",
+    seed: 4,
+  },
+  {
+    name: "Foo",
+    score: 10000,
+    date: "2020-10-17T17:04:44.936Z",
+    seed: 4,
+  },
+  {
+    name: "Bar",
+    score: 10000,
+    date: "2020-10-17T17:04:44.936Z",
+    seed: 4,
+  },
+  {
+    name: "Baz",
+    score: 10000,
+    date: "2020-10-17T17:04:44.936Z",
+    seed: 4,
+  },
+  {
+    name: "Bat",
+    score: 10000,
+    date: "2020-10-17T17:04:44.936Z",
+    seed: 4,
+  },
+  {
+    name: "Foo",
+    score: 10000,
+    date: "2020-10-17T17:04:44.936Z",
+    seed: 4,
+  },
+  {
+    name: "Bar",
+    score: 10000,
+    date: "2020-10-17T17:04:44.936Z",
+    seed: 4,
+  },
+  {
+    name: "Baz",
+    score: 10000,
+    date: "2020-10-17T17:04:44.936Z",
+    seed: 4,
+  },
+  {
+    name: "Bat",
+    score: 10000,
+    date: "2020-10-17T17:04:44.936Z",
+    seed: 4,
+  },
+  {
+    name: "Foo",
+    score: 10000,
+    date: "2020-10-17T17:04:44.936Z",
+    seed: 4,
+  },
+  {
+    name: "Bar",
+    score: 10000,
+    date: "2020-10-17T17:04:44.936Z",
+    seed: 4,
+  },
+  {
+    name: "Baz",
+    score: 10000,
+    date: "2020-10-17T17:04:44.936Z",
+    seed: 4,
+  },
   {
     name: "Bat",
     score: 11000,
@@ -157,37 +159,52 @@ const mockResponse: Entry[] = [
 const sortEntry = (entry: Entry, otherEntry: Entry): number =>
   entry.score - otherEntry.score;
 
+const forceWait = () => new Promise((resolve) => {
+  setTimeout(resolve, 1000)
+})
+
+const createFetchData = (
+  setEntries: any,
+  setIsLoading: any,
+  setError: any
+) => async () => {
+  setIsLoading(true);
+  try {
+    const response = await fetch(
+      "https://u3jbutkvth.execute-api.eu-west-1.amazonaws.com/prod/scores?seed=4"
+    ).then((data) => data.json());
+
+    if (response.length > 0) {
+      setEntries(response.sort(sortEntry).reverse());
+    } else {
+      setError({ errorMessage: "Could not update leaderboard" });
+    }
+  } catch (err) {
+    setError({
+      errorMessage: "Could not update leaderboard",
+      technicalMessage: err.toString(),
+    });
+  }
+  //   setEntries(mockResponse.sort(sortEntry).reverse());
+  await forceWait(); // Show progressbar a bit longer
+  setIsLoading(false);
+};
+
+// TODO clean up timer on unmount
 const useLeaderboard = () => {
   const [entries, setEntries] = useState<Entry[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<
     { errorMessage: string; technicalMessage?: string } | undefined
   >();
 
   useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await fetch(
-          "https://u3jbutkvth.execute-api.eu-west-1.amazonaws.com/prod/scores?seed=4"
-        ).then((data) => data.json());
-
-        // TODO update every n seconds
-        if (response.length > 0) {
-          setEntries(response.sort(sortEntry).reverse());
-        } else {
-          setError({ errorMessage: "Could not update leaderboard" });
-        }
-      } catch (err) {
-        setError({
-          errorMessage: "Could not update leaderboard",
-          technicalMessage: err.toString(),
-        });
-      }
-    //   setEntries(mockResponse.sort(sortEntry).reverse());
-    }
+    const fetchData = createFetchData(setEntries, setIsLoading, setError);
+    const timer = setInterval(fetchData, REFRESH_MS);
     fetchData();
   }, []);
 
-  return { entries, error };
+  return { entries, isLoading, error };
 };
 
 export default useLeaderboard;
