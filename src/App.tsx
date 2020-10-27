@@ -6,6 +6,8 @@ import {
   ThemeProvider,
   List,
   Grid,
+  Typography,
+  Link,
 } from "@material-ui/core";
 import ErrorCard from "./components/ErrorCard";
 import BoardCard from "./components/BoardCard";
@@ -27,15 +29,10 @@ const App: FC = () => {
         <Grid
           container
           direction="column"
-          justify="center"
           spacing={4}
           style={{ height: "100%", margin: 0 }}
+          wrap="nowrap"
         >
-          <Grid item>
-            <BoardCard>
-              <List>{entryListItems}</List>
-            </BoardCard>
-          </Grid>
           {error && (
             <Grid item>
               <ErrorCard
@@ -44,6 +41,16 @@ const App: FC = () => {
               />
             </Grid>
           )}
+          <Grid item>
+            <BoardCard>
+              <Typography>
+                Try out the Freelancer challenge and see your high score here.{" "}
+                <Link href="./Freelancer.pdf">More info in this PDF</Link>.
+              </Typography>
+              {/* TODO logos and links to Ordina and Codestar sites and social media */}
+              <List>{entryListItems}</List>
+            </BoardCard>
+          </Grid>
         </Grid>
       </Container>
     </ThemeProvider>
