@@ -39,8 +39,8 @@ const App: FC = () => {
       // TODO fix CORS
       try {
         const response = await fetch(
-          // "http://localhost:9009/?get=https://u3jbutkvth.execute-api.eu-west-1.amazonaws.com/prod/scores?seed=4"
-          "https://u3jbutkvth.execute-api.eu-west-1.amazonaws.com/prod/scores?seed=4"
+          "http://localhost:9009/?get=https://u3jbutkvth.execute-api.eu-west-1.amazonaws.com/prod/scores?seed=4"
+          // "https://u3jbutkvth.execute-api.eu-west-1.amazonaws.com/prod/scores?seed=4"
         ).then((data) => data.json());
 
         // TODO update every n seconds

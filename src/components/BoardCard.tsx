@@ -16,7 +16,12 @@ const StyledCard = withStyles(() => ({
 const StyledCardHeader = withStyles((theme: Theme) => ({
   root: {
     backgroundColor: theme.palette.primary.dark,
-    textAlign: "center"
+    textAlign: "center",
+  },
+  title: {
+    color: "black",
+    fontFamily: "Arvo, serif",
+    fontVariant: "all-small-caps",
   },
 }))(CardHeader);
 
