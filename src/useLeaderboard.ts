@@ -20,132 +20,132 @@ const mockResponse: Entry[] = [
     date: "2020-10-17T17:04:44.936Z",
     seed: 4,
   },
-//   {
-//     name: "Baz",
-//     score: 10000,
-//     date: "2020-10-17T17:04:44.936Z",
-//     seed: 4,
-//   },
-//   {
-//     name: "Bat",
-//     score: 10000,
-//     date: "2020-10-17T17:04:44.936Z",
-//     seed: 4,
-//   },
-//   {
-//     name: "Foo",
-//     score: 10000,
-//     date: "2020-10-17T17:04:44.936Z",
-//     seed: 4,
-//   },
-//   {
-//     name: "Bar",
-//     score: 10000,
-//     date: "2020-10-17T17:04:44.936Z",
-//     seed: 4,
-//   },
-//   {
-//     name: "Baz",
-//     score: 10000,
-//     date: "2020-10-17T17:04:44.936Z",
-//     seed: 4,
-//   },
-//   {
-//     name: "Bat",
-//     score: 10000,
-//     date: "2020-10-17T17:04:44.936Z",
-//     seed: 4,
-//   },
-//   {
-//     name: "Foo",
-//     score: 10000,
-//     date: "2020-10-17T17:04:44.936Z",
-//     seed: 4,
-//   },
-//   {
-//     name: "Bar",
-//     score: 10000,
-//     date: "2020-10-17T17:04:44.936Z",
-//     seed: 4,
-//   },
-//   {
-//     name: "Baz",
-//     score: 10000,
-//     date: "2020-10-17T17:04:44.936Z",
-//     seed: 4,
-//   },
-//   {
-//     name: "Bat",
-//     score: 10000,
-//     date: "2020-10-17T17:04:44.936Z",
-//     seed: 4,
-//   },
-//   {
-//     name: "Foo",
-//     score: 10000,
-//     date: "2020-10-17T17:04:44.936Z",
-//     seed: 4,
-//   },
-//   {
-//     name: "Bar",
-//     score: 10000,
-//     date: "2020-10-17T17:04:44.936Z",
-//     seed: 4,
-//   },
-//   {
-//     name: "Baz",
-//     score: 10000,
-//     date: "2020-10-17T17:04:44.936Z",
-//     seed: 4,
-//   },
-//   {
-//     name: "Bat",
-//     score: 10000,
-//     date: "2020-10-17T17:04:44.936Z",
-//     seed: 4,
-//   },
-//   {
-//     name: "Foo",
-//     score: 10000,
-//     date: "2020-10-17T17:04:44.936Z",
-//     seed: 4,
-//   },
-//   {
-//     name: "Bar",
-//     score: 10000,
-//     date: "2020-10-17T17:04:44.936Z",
-//     seed: 4,
-//   },
-//   {
-//     name: "Baz",
-//     score: 10000,
-//     date: "2020-10-17T17:04:44.936Z",
-//     seed: 4,
-//   },
-//   {
-//     name: "Bat",
-//     score: 10000,
-//     date: "2020-10-17T17:04:44.936Z",
-//     seed: 4,
-//   },
-//   {
-//     name: "Foo",
-//     score: 10000,
-//     date: "2020-10-17T17:04:44.936Z",
-//     seed: 4,
-//   },
-//   {
-//     name: "Bar",
-//     score: 10000,
-//     date: "2020-10-17T17:04:44.936Z",
-//     seed: 4,
-//   },
-//   {
-//     name: "Baz",
-//     score: 10000,
-//     date: "2020-10-17T17:04:44.936Z",
-//     seed: 4,
-//   },
+  //   {
+  //     name: "Baz",
+  //     score: 10000,
+  //     date: "2020-10-17T17:04:44.936Z",
+  //     seed: 4,
+  //   },
+  //   {
+  //     name: "Bat",
+  //     score: 10000,
+  //     date: "2020-10-17T17:04:44.936Z",
+  //     seed: 4,
+  //   },
+  //   {
+  //     name: "Foo",
+  //     score: 10000,
+  //     date: "2020-10-17T17:04:44.936Z",
+  //     seed: 4,
+  //   },
+  //   {
+  //     name: "Bar",
+  //     score: 10000,
+  //     date: "2020-10-17T17:04:44.936Z",
+  //     seed: 4,
+  //   },
+  //   {
+  //     name: "Baz",
+  //     score: 10000,
+  //     date: "2020-10-17T17:04:44.936Z",
+  //     seed: 4,
+  //   },
+  //   {
+  //     name: "Bat",
+  //     score: 10000,
+  //     date: "2020-10-17T17:04:44.936Z",
+  //     seed: 4,
+  //   },
+  //   {
+  //     name: "Foo",
+  //     score: 10000,
+  //     date: "2020-10-17T17:04:44.936Z",
+  //     seed: 4,
+  //   },
+  //   {
+  //     name: "Bar",
+  //     score: 10000,
+  //     date: "2020-10-17T17:04:44.936Z",
+  //     seed: 4,
+  //   },
+  //   {
+  //     name: "Baz",
+  //     score: 10000,
+  //     date: "2020-10-17T17:04:44.936Z",
+  //     seed: 4,
+  //   },
+  //   {
+  //     name: "Bat",
+  //     score: 10000,
+  //     date: "2020-10-17T17:04:44.936Z",
+  //     seed: 4,
+  //   },
+  //   {
+  //     name: "Foo",
+  //     score: 10000,
+  //     date: "2020-10-17T17:04:44.936Z",
+  //     seed: 4,
+  //   },
+  //   {
+  //     name: "Bar",
+  //     score: 10000,
+  //     date: "2020-10-17T17:04:44.936Z",
+  //     seed: 4,
+  //   },
+  //   {
+  //     name: "Baz",
+  //     score: 10000,
+  //     date: "2020-10-17T17:04:44.936Z",
+  //     seed: 4,
+  //   },
+  //   {
+  //     name: "Bat",
+  //     score: 10000,
+  //     date: "2020-10-17T17:04:44.936Z",
+  //     seed: 4,
+  //   },
+  //   {
+  //     name: "Foo",
+  //     score: 10000,
+  //     date: "2020-10-17T17:04:44.936Z",
+  //     seed: 4,
+  //   },
+  //   {
+  //     name: "Bar",
+  //     score: 10000,
+  //     date: "2020-10-17T17:04:44.936Z",
+  //     seed: 4,
+  //   },
+  //   {
+  //     name: "Baz",
+  //     score: 10000,
+  //     date: "2020-10-17T17:04:44.936Z",
+  //     seed: 4,
+  //   },
+  //   {
+  //     name: "Bat",
+  //     score: 10000,
+  //     date: "2020-10-17T17:04:44.936Z",
+  //     seed: 4,
+  //   },
+  //   {
+  //     name: "Foo",
+  //     score: 10000,
+  //     date: "2020-10-17T17:04:44.936Z",
+  //     seed: 4,
+  //   },
+  //   {
+  //     name: "Bar",
+  //     score: 10000,
+  //     date: "2020-10-17T17:04:44.936Z",
+  //     seed: 4,
+  //   },
+  //   {
+  //     name: "Baz",
+  //     score: 10000,
+  //     date: "2020-10-17T17:04:44.936Z",
+  //     seed: 4,
+  //   },
   {
     name: "Bat",
     score: 11000,
@@ -154,7 +154,8 @@ const mockResponse: Entry[] = [
   },
 ];
 
-const sortEntry = (entry: Entry, otherEntry: Entry): number => entry.score - otherEntry.score;
+const sortEntry = (entry: Entry, otherEntry: Entry): number =>
+  entry.score - otherEntry.score;
 
 const useLeaderboard = () => {
   const [entries, setEntries] = useState<Entry[]>([]);
@@ -164,17 +165,16 @@ const useLeaderboard = () => {
 
   useEffect(() => {
     async function fetchData() {
-      // TODO fix CORS
       try {
         const response = await fetch(
-          "http://localhost:9009/?get=https://u3jbutkvth.execute-api.eu-west-1.amazonaws.com/prod/scores?seed=4"
-          // "https://u3jbutkvth.execute-api.eu-west-1.amazonaws.com/prod/scores?seed=4"
+          //   "http://localhost:9009/?get=https://u3jbutkvth.execute-api.eu-west-1.amazonaws.com/prod/scores?seed=4"
+          "https://u3jbutkvth.execute-api.eu-west-1.amazonaws.com/prod/scores?seed=4"
         ).then((data) => data.json());
 
         // TODO update every n seconds
         if (response.length > 0) {
           setEntries(response.sort(sortEntry).reverse());
-          setEntries(mockResponse.sort(sortEntry).reverse());
+        //   setEntries(mockResponse.sort(sortEntry).reverse());
         } else {
           setError({ errorMessage: "Could not update leaderboard" });
         }
