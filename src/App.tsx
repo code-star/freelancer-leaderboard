@@ -15,11 +15,12 @@ import {
   Paper,
   Grid,
 } from "@material-ui/core";
+import ErrorCard from "./components/ErrorCard";
 
 const darkTheme = createMuiTheme({
   palette: {
     type: "dark",
-    primary: orange
+    primary: orange,
   },
 });
 
@@ -32,15 +33,15 @@ interface Entry {
 
 const App: FC = () => {
   const [entries, setEntries] = useState<Entry[]>([]);
-  const [errorMessage, setErrorMessage] = useState<String>("");
+  const [errorMessage, setErrorMessage] = useState<string>("");
 
   useEffect(() => {
     async function fetchData() {
       // TODO fix CORS
       try {
         const response = await fetch(
-          "http://localhost:9009/?get=https://u3jbutkvth.execute-api.eu-west-1.amazonaws.com/prod/scores?seed=4"
-          // "https://u3jbutkvth.execute-api.eu-west-1.amazonaws.com/prod/scores?seed=4"
+          // "http://localhost:9009/?get=https://u3jbutkvth.execute-api.eu-west-1.amazonaws.com/prod/scores?seed=4"
+          "https://u3jbutkvth.execute-api.eu-west-1.amazonaws.com/prod/scores?seed=4"
         ).then((data) => data.json());
 
         // TODO update every n seconds
@@ -89,9 +90,7 @@ const App: FC = () => {
           </Grid>
           {errorMessage && (
             <Grid item>
-              <Card>
-                <CardContent>{errorMessage}</CardContent>
-              </Card>
+              <ErrorCard errorMessage={errorMessage} />
             </Grid>
           )}
         </Grid>
