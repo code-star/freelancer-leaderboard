@@ -6,7 +6,7 @@ import {
   withStyles,
   Theme,
 } from "@material-ui/core";
-import { Entry } from "../useLeaderboard";
+import { Entry } from "../hooks/useLeaderboard";
 
 interface Props {
   index: number;

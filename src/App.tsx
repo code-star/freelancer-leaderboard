@@ -10,7 +10,7 @@ import {
 } from "@material-ui/core";
 import ErrorCard from "./components/ErrorCard";
 import BoardCard from "./components/BoardCard";
-import useLeaderboard from "./useLeaderboard";
+import useLeaderboard from "./hooks/useLeaderboard";
 import theme from "./theme";
 import EntryListItem from "./components/EntryListItem";
 import EntryListHeader from "./components/EntryListHeader";
@@ -30,7 +30,8 @@ const App: FC = () => {
           container
           direction="column"
           spacing={4}
-          style={{ height: "100%", margin: 0 }}
+          // Reset marginTop to prevent not full height
+          style={{ height: "100%", marginTop: 0 }}
           wrap="nowrap"
         >
           {error && (
