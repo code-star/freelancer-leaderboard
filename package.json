@@ -1,5 +1,6 @@
 {
   "name": "freelancer-leaderboard",
+  "homepage": "https://www.codestar.nl/freelancer-leaderboard",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
