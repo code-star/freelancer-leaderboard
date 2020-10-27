@@ -9,6 +9,7 @@ import {
   List,
   ListItem,
   Grid,
+  Box,
 } from "@material-ui/core";
 import ErrorCard from "./components/ErrorCard";
 import BoardCard from "./components/BoardCard";
@@ -49,7 +50,10 @@ const App: FC = () => {
           setError({ errorMessage: "Could not update leaderboard" });
         }
       } catch (err) {
-        setError({ errorMessage: "Could not update leaderboard", technicalMessage: err.toString() });
+        setError({
+          errorMessage: "Could not update leaderboard",
+          technicalMessage: err.toString(),
+        });
       }
     }
     fetchData();
@@ -76,7 +80,7 @@ const App: FC = () => {
           direction="column"
           justify="center"
           spacing={4}
-          style={{ height: "100%" }}
+          style={{ height: "100%", margin: 0 }}
         >
           <Grid item>
             <BoardCard>
@@ -85,7 +89,10 @@ const App: FC = () => {
           </Grid>
           {error && (
             <Grid item>
-              <ErrorCard errorMessage={error.errorMessage} technicalMessage={error.technicalMessage} />
+              <ErrorCard
+                errorMessage={error.errorMessage}
+                technicalMessage={error.technicalMessage}
+              />
             </Grid>
           )}
         </Grid>
