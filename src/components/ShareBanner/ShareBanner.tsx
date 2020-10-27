@@ -12,25 +12,6 @@ import youtubeIcon from "./youtube.svg";
 const ShareBanner: FC = () => {
   return (
     <div style={{ margin: "1rem" }}>
-      {/* <Typography align="center">Made by</Typography>
-      <Box component="div" textAlign="center">
-        <Link href="https://www.ordina.nl/vakgebieden/scala/">
-          <img
-            alt="Codestar - Passionate programmers. Powered by Ordina"
-            style={{ width: "300px" }}
-            src={codestarLogo}
-          />
-        </Link>
-      </Box>
-      <Box component="div" textAlign="center">
-        <Link href="https://www.ordina.nl/vakgebieden/scala/">
-          <img
-            alt="Codestar - Passionate programmers. Powered by Ordina"
-            style={{ width: "300px" }}
-            src={ordinaLogo}
-          />
-        </Link>
-      </Box> */}
       <Grid container spacing={4}>
         <Grid item xs={6}>
           <Typography align="center">Made by</Typography>{" "}
@@ -48,31 +29,30 @@ const ShareBanner: FC = () => {
           </Link>
         </Grid>
       </Grid>
-      {/* TODO fix order, links and alt texts */}
       <Grid container spacing={1} justify="center">
         <Grid item xs={1}>
-          <Link href="https://www.ordina.nl/vakgebieden/scala/">
-            <img alt="Codestar Github" src={githubIcon} />
+          <Link href="https://github.com/code-star">
+            <img alt="Codestar on Github" src={githubIcon} />
           </Link>
         </Grid>
         <Grid item xs={1}>
-          <Link href="https://www.ordina.nl/vakgebieden/scala/">
-            <img alt="x" src={linkedinIcon} />
+          <Link href="https://www.linkedin.com/company/codestar-powered-by-ordina">
+            <img alt="Codestar on LinkedIn" src={linkedinIcon} />
           </Link>
         </Grid>
         <Grid item xs={1}>
-          <Link href="https://www.ordina.nl/vakgebieden/scala/">
-            <img alt="x" src={mediumIcon} />
+          <Link href="https://medium.com/codestar-blog">
+            <img alt="Codestar on Medium" src={mediumIcon} />
           </Link>
         </Grid>
         <Grid item xs={1}>
-          <Link href="https://www.ordina.nl/vakgebieden/scala/">
-            <img alt="x" src={meetupIcon} />
+          <Link href="https://www.meetup.com/Codestar-Night/">
+            <img alt="Codestar on Meetup" src={meetupIcon} />
           </Link>
         </Grid>
         <Grid item xs={1}>
-          <Link href="https://www.ordina.nl/vakgebieden/scala/">
-            <img alt="x" src={youtubeIcon} />
+          <Link href="https://www.youtube.com/c/codestar">
+            <img alt="Codestar on Youtube" src={youtubeIcon} />
           </Link>
         </Grid>
       </Grid>
