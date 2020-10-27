@@ -20,8 +20,7 @@ const StyledCardHeader = withStyles((theme: Theme) => ({
   },
   title: {
     color: "black",
-    fontFamily: "Arvo, serif",
-    fontVariant: "all-small-caps",
+    fontFamily: "Vibrocentric-Regular, serif",
   },
 }))(CardHeader);
 
@@ -34,7 +33,7 @@ const StyledCardContent = withStyles(() => ({
 const BoardCard: FC = ({ children }) => {
   return (
     <StyledCard>
-      <StyledCardHeader title="Freelancer Leaderboard" />
+      <StyledCardHeader title="FREELANCER LEADERBOARD" />
       <StyledCardContent>{children}</StyledCardContent>
     </StyledCard>
   );
