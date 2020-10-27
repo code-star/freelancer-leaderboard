@@ -6,7 +6,7 @@ type LeaderboardError =
   | { errorMessage: string; technicalMessage?: string }
   | undefined;
 
-const REFRESH_MS = 3000 * 1000;
+const REFRESH_MS = 60 * 1000;
 
 const sortEntry = (entry: Entry, otherEntry: Entry): number =>
   entry.score - otherEntry.score;
