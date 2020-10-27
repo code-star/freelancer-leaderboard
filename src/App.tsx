@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import "./App.css";
-
 import {
   Container,
   ThemeProvider,
@@ -12,15 +11,16 @@ import {
 import ErrorCard from "./components/ErrorCard";
 import BoardCard from "./components/BoardCard";
 import useLeaderboard from "./useLeaderboard";
-
 import theme from "./theme";
 import EntryListItem from "./components/EntryListItem";
+import EntryListHeader from "./components/EntryListHeader";
+import ShareBanner from "./components/ShareBanner";
 
 const App: FC = () => {
   const { entries, error } = useLeaderboard();
 
-  const entryListItems = entries.map((entry) => (
-    <EntryListItem key={entry.name} entry={entry} />
+  const entryListItems = entries.map((entry, index) => (
+    <EntryListItem key={entry.name} index={index + 1} entry={entry} />
   ));
 
   return (
@@ -47,8 +47,11 @@ const App: FC = () => {
                 Try out the Freelancer challenge and see your high score here.{" "}
                 <Link href="./Freelancer.pdf">More info in this PDF</Link>.
               </Typography>
-              {/* TODO logos and links to Ordina and Codestar sites and social media */}
-              <List>{entryListItems}</List>
+              <ShareBanner />
+              <List>
+                <EntryListHeader />
+                {entryListItems}
+              </List>
             </BoardCard>
           </Grid>
         </Grid>
