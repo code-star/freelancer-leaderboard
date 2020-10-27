@@ -1,163 +1,12 @@
 import { useState, useEffect } from "react";
+import { Entry } from "./Entry.type";
+import { generateMockEntries, staticMockResponse } from "./mockResponse";
 
-export interface Entry {
-  name: string;
-  score: number;
-  date: string;
-  seed: number;
-}
 type LeaderboardError =
   | { errorMessage: string; technicalMessage?: string }
   | undefined;
 
-const REFRESH_MS = 30 * 1000;
-
-const mockResponse: Entry[] = [
-  {
-    name: "Foo",
-    score: 10000,
-    date: "2020-10-17T17:04:44.936Z",
-    seed: 4,
-  },
-  {
-    name: "Bar",
-    score: 9000,
-    date: "2020-10-17T17:04:44.936Z",
-    seed: 4,
-  },
-  {
-    name: "Baz",
-    score: 10000,
-    date: "2020-10-17T17:04:44.936Z",
-    seed: 4,
-  },
-  {
-    name: "Bat",
-    score: 10000,
-    date: "2020-10-17T17:04:44.936Z",
-    seed: 4,
-  },
-  {
-    name: "Foo",
-    score: 10000,
-    date: "2020-10-17T17:04:44.936Z",
-    seed: 4,
-  },
-  {
-    name: "Bar",
-    score: 10000,
-    date: "2020-10-17T17:04:44.936Z",
-    seed: 4,
-  },
-  {
-    name: "Baz",
-    score: 10000,
-    date: "2020-10-17T17:04:44.936Z",
-    seed: 4,
-  },
-  {
-    name: "Bat",
-    score: 10000,
-    date: "2020-10-17T17:04:44.936Z",
-    seed: 4,
-  },
-  {
-    name: "Foo",
-    score: 10000,
-    date: "2020-10-17T17:04:44.936Z",
-    seed: 4,
-  },
-  {
-    name: "Bar",
-    score: 10000,
-    date: "2020-10-17T17:04:44.936Z",
-    seed: 4,
-  },
-  {
-    name: "Baz",
-    score: 10000,
-    date: "2020-10-17T17:04:44.936Z",
-    seed: 4,
-  },
-  {
-    name: "Bat",
-    score: 10000,
-    date: "2020-10-17T17:04:44.936Z",
-    seed: 4,
-  },
-  {
-    name: "Foo",
-    score: 10000,
-    date: "2020-10-17T17:04:44.936Z",
-    seed: 4,
-  },
-  {
-    name: "Bar",
-    score: 10000,
-    date: "2020-10-17T17:04:44.936Z",
-    seed: 4,
-  },
-  {
-    name: "Baz",
-    score: 10000,
-    date: "2020-10-17T17:04:44.936Z",
-    seed: 4,
-  },
-  {
-    name: "Bat",
-    score: 10000,
-    date: "2020-10-17T17:04:44.936Z",
-    seed: 4,
-  },
-  {
-    name: "Foo",
-    score: 10000,
-    date: "2020-10-17T17:04:44.936Z",
-    seed: 4,
-  },
-  {
-    name: "Bar",
-    score: 10000,
-    date: "2020-10-17T17:04:44.936Z",
-    seed: 4,
-  },
-  {
-    name: "Baz",
-    score: 10000,
-    date: "2020-10-17T17:04:44.936Z",
-    seed: 4,
-  },
-  {
-    name: "Bat",
-    score: 10000,
-    date: "2020-10-17T17:04:44.936Z",
-    seed: 4,
-  },
-  {
-    name: "Foo",
-    score: 10000,
-    date: "2020-10-17T17:04:44.936Z",
-    seed: 4,
-  },
-  {
-    name: "Bar",
-    score: 10000,
-    date: "2020-10-17T17:04:44.936Z",
-    seed: 4,
-  },
-  {
-    name: "Baz",
-    score: 10000,
-    date: "2020-10-17T17:04:44.936Z",
-    seed: 4,
-  },
-  {
-    name: "Bat",
-    score: 11000,
-    date: "2020-10-17T17:04:44.936Z",
-    seed: 4,
-  },
-];
+const REFRESH_MS = 3000 * 1000;
 
 const sortEntry = (entry: Entry, otherEntry: Entry): number =>
   entry.score - otherEntry.score;
@@ -189,8 +38,13 @@ const createFetchData = (
       technicalMessage: err.toString(),
     });
   }
-  // setEntries(mockResponse.sort(sortEntry).reverse());
-  await forceWait(); // Show progressbar a bit longer
+
+  // For debugging
+  setEntries(staticMockResponse.sort(sortEntry).reverse());
+  // setEntries(generateMockEntries(100).sort(sortEntry).reverse());
+
+  // Request is too fast, show progressbar a bit longer so the visitor knows the scores will be updated
+  await forceWait(); 
   setIsLoading(false);
 };
 
